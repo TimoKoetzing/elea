@@ -562,6 +562,27 @@ Blockly.defineBlocksWithJsonArray([
         "helpUrl": ""
       },
 
+      {
+        "type": "ea_sum_oscar",
+        "message0": "sum %1 with %2",
+        "args0": [
+          {
+            "type": "field_number",
+            "name": "variable1",
+            "check": "number"
+          },
+          {
+            "type": "field_number",
+            "name": "variable2",
+            "check": "Number"
+          }
+        ],
+        "colour": "#777",
+        "output": "Number",
+        "tooltip": "Test",
+        "helpUrl": "http://pi.local/admin"
+      },
+
       
 ]);
 
@@ -908,6 +929,18 @@ Blockly.JavaScript['ea_crossover_uniform'] = function(block) {
     '}']);
   return [functionCrossover3, Blockly.JavaScript.ORDER_NONE];
 };
+
+Blockly.JavaScript['ea_sum_oscar'] = function(block) {
+  // var num1 = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('variable1'), Blockly.Variables.NAME_TYPE);
+  // var num2 = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('variable2'), Blockly.Variables.NAME_TYPE);
+  var num1 = block.getFieldValue("variable1");
+  var num2 = block.getFieldValue("variable2");
+  console.log(num1, num2);
+
+  var code = num1+" + "+num2;
+  return [code, Blockly.JavaScript.ORDER_ADDITION]
+}
+
 
 // TODO: add global shuffle function from https://stackoverflow.com/a/2450976 :
 /*
