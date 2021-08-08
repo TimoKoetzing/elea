@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+    <h1>Multithread Test</h1>
+
+    <p>Calculate the sum of a Fibonacci number calculated once per thread:</p>
+    <label for="fib_number">Fibonacci:</label>
+    <input type="number" id="fib_number" name="fib_number" min="1" max="50", onchange="update_fib()", value="10">
+
+    <label for="thread_number">Threads:</label>
+    <input type="number" id="thread_number" name="thread_number" min="1" max="50", onchange="update_thread_count()", value="1">
+    <hr>
+  
+    <button onclick="run_serial()">Press to run serial</button>
+    <button onclick="run_parallel()">Press to run parallel</button>
+    <pre id="output"></pre>
+
+    <script src="scripts/multithread.js"></script>
+</body>
