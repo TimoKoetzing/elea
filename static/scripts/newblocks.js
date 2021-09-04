@@ -655,7 +655,7 @@ Blockly.JavaScript['run_thread'] = function(block) {
   worker_code += ";\n";
 
   worker_code += "let regex = /([^/]*$)/;\n"
-  worker_code += "workerURL = (self.location + '').slice(5);\n"
+  worker_code += "workerURL = `"+self.location+"`;\n"
   worker_code += "workerURL = workerURL.replace(regex, '');\n"
   worker_code += "console.log(location);\n";
   worker_code += "console.log(workerURL);\n";
