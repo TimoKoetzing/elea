@@ -654,9 +654,11 @@ Blockly.JavaScript['run_thread'] = function(block) {
   }
   worker_code += ";\n";
 
-  worker_code += "let regex = /([^/]+$)/;\n"
+  worker_code += "let regex = /([^/]*$)/;\n"
   worker_code += "workerURL = (self.location + '').slice(5);\n"
-  worker_code += "workerURL = workerURL.replace(regex, '');"
+  worker_code += "workerURL = workerURL.replace(regex, '');\n"
+  worker_code += "console.log(location);\n";
+  worker_code += "console.log(workerURL);\n";
   worker_code += "importScripts(workerURL+'scripts/MessageHandler.js');\n"
   worker_code += "\n";
   worker_code += "function* main() {\n";

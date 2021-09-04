@@ -194,9 +194,11 @@ main.next();
     messageHandler +=    '  }\n';
     messageHandler +=    '}, false);\n';
     let header = "";
-    header += "let regex = /([^/]+$)/;"
+    header += "let regex = /([^/]*$)/;\n"
     header += "workerURL = (self.location + '').slice(5);\n"
-    header += "workerURL = workerURL.replace(regex, '');"
+    header += "workerURL = workerURL.replace(regex, '');\n"
+    header += "console.log(location);\n";
+    header += "console.log(workerURL);\n";
     header += "importScripts(workerURL+'scripts/MessageHandler.js');\n"
 
     /*"function consolelog(x) {self.postMessage({output:x})};\n*/
