@@ -195,7 +195,7 @@ main.next();
     messageHandler +=    '}, false);\n';
     let header = "";
     header += "let regex = /([^/]*$)/;\n"
-    header += "workerURL = (self.location + '').slice(5);\n"
+    header += "workerURL = "+self.location+";\n"
     header += "workerURL = workerURL.replace(regex, '');\n"
     header += "console.log(location);\n";
     header += "console.log(workerURL);\n";
